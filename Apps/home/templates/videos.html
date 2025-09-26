@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Videos - Cursos Online{% endblock %}
+
+{% block header_title %}Videos de Cursos{% endblock %}
+{% block header_subtitle %}Biblioteca de contenido educativo{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>Catálogo de Videos</h2>
+            <p>Explora nuestra colección de videos educativos organizados por categorías.</p>
+        </div>
+    </div>
+    
+    <div class="row">
+        {% for video in videos %}
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ video.titulo }}</h5>
+                    <p class="card-text">
+                        <strong>Duración:</strong> {{ video.duracion }}<br>
+                        <strong>Categoría:</strong> {{ video.categoria }}
+                    </p>
+                    <a href="#" class="btn btn-primary">Ver Video</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <div class="row mt-5">
+        <div class="col-lg-12">
+            <h3>Próximamente</h3>
+            <p>Tenemos nuevos cursos:</p>
+            <ul>
+                <li>Django Framework</li>
+                <li>React.js</li>
+                <li>Machine Learning</li>
+                <li>Ciberseguridad</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
